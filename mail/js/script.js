@@ -7,13 +7,22 @@ console.log(listaEmail);
 
 var emailUtente= prompt("inserisci la tua mail per verificare la presenza nella lista desiderata:");
 console.log(emailUtente);
-for (var i = 0; i < array.length; i++) {
 
-  if (emailUtente == listaEmail[i]) {
+var confronto=false;
 
-      document.getElementById("check").innerHTML= "La tua E-mail e' presente nella lista";
+for (var i = 0; i < listaEmail.length; i++) {
 
-  }else {
-      document.getElementById("check").innerHTML= "La tua E-mail non e' presente nella lista. Si prega di contattare il servizio clienti per ulteriori infomazioni grazie.";
+  if (emailUtente==listaEmail[i]) {
+    confronto=true;
   }
+}
+
+if (confronto==true) {
+
+  document.getElementById("check").innerHTML = "Accesso Consentito";
+
+}else {
+
+  document.getElementById("check").innerHTML = "Accesso non Consentito";
+
 }
